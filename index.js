@@ -287,7 +287,7 @@ At the end, this function should return the new array with information added"*/
 
 function addArtist(object){
 
-    /* Code here */
+    artists.push(object);
 
   }
 
@@ -300,6 +300,10 @@ const myObj = {
 	bio: "Luke Parr is an up and coming Software Enginerr and Web Designer. From Detroit, Mi and living in Merrimack, New Hampshire, Parr loves coding and is really getting the hang of it :)"
 }
 
+addArtist(myObj);
+
+//console.log(artists[artists.length - 1])
+
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
@@ -308,12 +312,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(array){
 
-  /* Code here */
+	const results = [];
+	
+	for (let index in array) {
+		if (array[index].paintings > 100) {
+			results.push(array[index].name);
+		}
+	}
+	
+	return results;
 
 }
 
+console.log(lotsOfArt(artists))
 
 
 // 🎨🎨 STRETCH 🎨🎨//
